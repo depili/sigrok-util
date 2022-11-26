@@ -17,5 +17,5 @@ jobs:
 
       - name: Build
         run: |
-          cd cross-compile/macos
+          cd cross-compile/macosx
           ./sigrok-native-macosx
