@@ -4,8 +4,8 @@ on: push
 
 jobs:
   build:
-    name: Build osx native
-    runs-on: macos-latest
+    name: Build osx 12 native
+    runs-on: macos-12
     steps:
       - uses: actions/checkout@master
 
@@ -19,3 +19,8 @@ jobs:
         run: |
           cd cross-compile/macosx
           ./sigrok-native-macosx
+      - name: Artifacts
+        - uses: actions/upload-artifact@v3
+          with:
+            name: osx-12_qt_6
+            path: ~/sr
