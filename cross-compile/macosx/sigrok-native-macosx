@@ -45,7 +45,7 @@ export CC=gcc
 export CXX=g++
 
 # We use Qt 5.5 in order to remain compatible with more versions of Mac OS X.
-QTVER=qt@5.5
+QTVER=qt
 
 # Path to Qt5 binaries (needed for cmake to find the Qt5 libs).
 export PATH="$(brew --prefix $QTVER)/bin:$PATH"
@@ -57,7 +57,7 @@ export PATH="$(brew --prefix $QTVER)/bin:$PATH"
 # PKG_CONFIG_PATH will need to point to pkg-config files of Homebrew's
 # keg-only formulae.
 P="$PREFIX/lib/pkgconfig"
-for FORMULA in libffi python@2 python@3 "$QTVER"; do
+for FORMULA in libffi python@3 "$QTVER"; do
     P="$P:$(brew --prefix "$FORMULA")/lib/pkgconfig"
 done
 
