@@ -11,7 +11,7 @@ jobs:
 
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: build-essential cmake wget unzip pkg-config autoconf libtool sdcc qt5-default libzip-dev
+          packages: build-essential cmake wget unzip pkg-config autoconf libtool sdcc qt5-default libzip-dev libglibmm-2.4-dev
 
       - name: Build
         run: |
