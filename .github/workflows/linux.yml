@@ -11,9 +11,9 @@ jobs:
 
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: build-essential cmake wget unzip pkg-config autoconf libtool sdcc qt5-default libzip-dev libglibmm-2.4-dev doxygen gir1.2-gtk-3.0 qttools5-dev qttools5-dev-tools libgirepository1.0-dev libcairo2-dev pkg-config python3-dev libqt5svg5-dev libboost-all-dev
+          packages: build-essential cmake wget unzip pkg-config autoconf libtool sdcc qt5-default libzip-dev libglibmm-2.4-dev doxygen gir1.2-gtk-3.0 qttools5-dev qttools5-dev-tools libgirepository1.0-dev libcairo2-dev pkg-config python3-dev libqt5svg5-dev libboost-all-dev libusb-1.0-0-dev libftdi-dev libieee1284-3-dev libnettle7 libhidapi-dev
 
-      - run: pip install pycairo PyGObject
+      - run: pip install -I pycairo PyGObject
 
       - name: Build
         run: |
