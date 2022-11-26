@@ -1,0 +1,19 @@
+name: Build the project on OSX
+
+on: push
+
+jobs:
+  build:
+    name: Build linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: build-essential cmake wget unzip pkg-config autoconf libtool sdcc qt5-default
+
+      - name: Build
+        run: |
+          cd cross-compile/linux
+          ./sigrok-cross-linux
