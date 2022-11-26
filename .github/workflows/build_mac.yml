@@ -1,0 +1,21 @@
+name: Build the project on OSX
+
+on: push
+
+jobs:
+  build:
+    name: Build osx native
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Install deps
+        run: |
+          brew update
+          brew install libzip libftdi libusb libtool glibmm doxygen autoconf-archive sdcc python3 boost qt pkg-config cmake glib autoconf automake swig check pygobject3 gtk+3
+          brew upgrade
+
+      - name: Build
+        run: |
+          cd cross-compile/macos
+          ./sigrok-native-macosx
