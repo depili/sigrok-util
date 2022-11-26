@@ -3,7 +3,7 @@ name: Build the project on linux
 on: push
 
 jobs:
-  build:
+  build_qt5:
     name: Build ubuntu-20.04 glibmm-2.4 Qt5
     runs-on: ubuntu-20.04
     steps:
@@ -19,7 +19,7 @@ jobs:
         run: |
           cd cross-compile/linux
           ./sigrok-cross-linux
-
+  build_qt6:
     name: Build ubuntu-22.04 glibmm-2.4 Qt6
     runs-on: ubuntu-22.04
     steps:
