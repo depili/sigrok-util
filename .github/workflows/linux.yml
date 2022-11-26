@@ -4,18 +4,34 @@ on: push
 
 jobs:
   build:
-    name: Build linux
+    name: Build ubuntu-20.04 glibmm-2.4 Qt5
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@master
 
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: build-essential cmake wget unzip pkg-config autoconf libtool sdcc qt5-default libzip-dev libglibmm-2.4-dev doxygen gir1.2-gtk-3.0 qttools5-dev qttools5-dev-tools libgirepository1.0-dev libcairo2-dev pkg-config python3-dev libqt5svg5-dev libboost-all-dev libusb-1.0-0-dev libftdi-dev libieee1284-3-dev libnettle7 libhidapi-dev
+          packages: build-essential cmake wget unzip pkg-config autoconf libtool sdcc qt5-default libzip-dev libglibmm-2.4-dev doxygen gir1.2-gtk-3.0 qttools5-dev qttools5-dev-tools libgirepository1.0-dev libcairo2-dev pkg-config python3-dev libqt5svg5-dev libboost-all-dev libusb-1.0-0-dev libftdi-dev libieee1284-3-dev nettle-dev libhidapi-dev python3-pip
 
-      - run: pip install -I pycairo PyGObject
+      - run: pip3 install -I pycairo PyGObject
 
-      - name: Build
+      - name: sigrok-cross-linux
+        run: |
+          cd cross-compile/linux
+          ./sigrok-cross-linux
+
+    name: Build ubuntu-22.04 glibmm-2.4 Qt6
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@master
+
+      - uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: build-essential cmake wget unzip pkg-config autoconf libtool sdcc qt6-base-dev qt6-base-dev-tools libzip-dev libglibmm-2.4-dev doxygen gir1.2-gtk-3.0 libgirepository1.0-dev libcairo2-dev pkg-config python3-dev libqt6svg6-dev libboost-all-dev libusb-1.0-0-dev libftdi-dev libieee1284-3-dev nettle-dev libhidapi-dev python3-pip
+
+      - run: pip3 install -I pycairo PyGObject
+
+      - name: sigrok-cross-linux
         run: |
           cd cross-compile/linux
           ./sigrok-cross-linux
