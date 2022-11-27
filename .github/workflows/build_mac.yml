@@ -23,4 +23,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: osx-12_qt_6
-          path: ~/sr
+          path: ~/sr_macosx
