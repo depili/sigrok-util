@@ -146,7 +146,8 @@ make install $V
 cd ../..
 
 # PulseView
-$GIT_CLONE $REPO_BASE/pulseview
+# $GIT_CLONE $REPO_BASE/pulseview
+$GIT_CLONE -b qt6-support https://repo.or.cz/pulseview/gsi.git pulseview
 cd pulseview
 mkdir build
 cd build
