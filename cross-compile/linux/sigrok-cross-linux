@@ -33,7 +33,7 @@ PREFIX=$HOME/sr
 BUILDDIR=./build
 
 # The path where the libsigrok Python bindings will be installed.
-PYPATH=$PREFIX/lib/python2.7/site-packages
+PYPATH=$PREFIX/lib/python3.10/site-packages
 
 # JDK include path. Usually found automatically, except on FreeBSD.
 if [ `uname` = "FreeBSD" ]; then
