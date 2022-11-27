@@ -11,7 +11,7 @@ jobs:
 
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: build-essential cmake wget unzip pkg-config autoconf libtool sdcc qt5-default libzip-dev libglibmm-2.4-dev doxygen gir1.2-gtk-3.0 qttools5-dev qttools5-dev-tools libgirepository1.0-dev libcairo2-dev pkg-config python3-dev libqt5svg5-dev libboost-all-dev libusb-1.0-0-dev libftdi1-dev libieee1284-3-dev nettle-dev libhidapi-dev python3-pip python-gi-dev python3-numpy python3-setuptools default-jdk bluez
+          packages: build-essential cmake wget unzip pkg-config autoconf libtool sdcc qt5-default libzip-dev libglibmm-2.4-dev doxygen gir1.2-gtk-3.0 qttools5-dev qttools5-dev-tools libgirepository1.0-dev libcairo2-dev pkg-config python3-dev libqt5svg5-dev libboost-all-dev libusb-1.0-0-dev libftdi1-dev libieee1284-3-dev nettle-dev libhidapi-dev python3-pip python-gi-dev python3-numpy python3-setuptools default-jdk bluez check
 
       - run: pip3 install -I pycairo PyGObject
 
@@ -32,7 +32,7 @@ jobs:
 
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: build-essential cmake wget unzip pkg-config autoconf libtool sdcc qt6-base-dev qt6-base-dev-tools libzip-dev libglibmm-2.4-dev doxygen gir1.2-gtk-3.0 libgirepository1.0-dev libcairo2-dev pkg-config python3-dev libqt6svg6-dev libboost-all-dev libusb-1.0-0-dev libftdi1-dev libieee1284-3-dev nettle-dev libhidapi-dev python3-pip python-gi-dev python3-numpy python3-setuptools default-jdk bluez
+          packages: build-essential cmake wget unzip pkg-config autoconf libtool sdcc qt6-base-dev qt6-base-dev-tools libzip-dev libglibmm-2.4-dev doxygen gir1.2-gtk-3.0 libgirepository1.0-dev libcairo2-dev pkg-config python3-dev libqt6svg6-dev libboost-all-dev libusb-1.0-0-dev libftdi1-dev libieee1284-3-dev nettle-dev libhidapi-dev python3-pip python-gi-dev python3-numpy python3-setuptools default-jdk bluez check
 
       - run: pip3 install -I pycairo PyGObject
 
