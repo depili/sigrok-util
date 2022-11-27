@@ -34,6 +34,9 @@ jobs:
       - run: pip3 install -I pycairo PyGObject
 
       - name: sigrok-cross-linux
+        env:
+          CC: /usr/bin/clang
+          CXX: /usr/bin/clang++
         run: |
           cd cross-compile/linux
           ./sigrok-cross-linux
