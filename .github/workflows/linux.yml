@@ -19,11 +19,12 @@ jobs:
         run: |
           cd cross-compile/linux
           ./sigrok-cross-linux
-      - name: Artifacts
-        - uses: actions/upload-artifact@v3
-          with:
-            name: ubuntu-20.04_qt_5
-            path: ~/sr
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ubuntu-20.04_qt_5
+          path: ~/sr
+
   build_qt6:
     name: Build ubuntu-22.04 glibmm-2.4 Qt6
     runs-on: ubuntu-22.04
@@ -40,8 +41,8 @@ jobs:
         run: |
           cd cross-compile/linux
           ./sigrok-cross-linux
-      - name: Artifacts
-        - uses: actions/upload-artifact@v3
-          with:
-            name: ubuntu-22.04_qt_6
-            path: ~/sr
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ubuntu-22.04_qt_6
+          path: ~/sr
